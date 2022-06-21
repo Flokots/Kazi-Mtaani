@@ -1,3 +1,5 @@
+from concurrent.futures.process import _python_exit
+import email
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
@@ -5,9 +7,12 @@ from PIL import Image
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.CharField(max_length=200, null=True)
+    age = models.IntegerField(null=True, blank=True)
+    residence = models.CharField(null=True, blank=True, max_length=200)
+    skills = models.TextField()
     image = models.ImageField(default='default_user.jpg', upload_to='profile_pics/')
-    location = models.CharField(null=True, blank=True, max_length=200)
+    email = models.EmailField()
+    phone = models.CharField(null=True, blank=True, max_length=20)
 
     def __str__(self):
         return f'{self.user.username} Profile'
