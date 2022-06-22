@@ -1,0 +1,8 @@
+Hello {{name}}
+
+Welcome to Kazi Mtaani.
+
+Stay updated on the latest jobs available to you.
+
+Best wishes, 
+Kazi Mtaani Team

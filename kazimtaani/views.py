@@ -23,4 +23,4 @@ def subscribe(request):
             print('valid')
         else:
             form = NewsLetterForm()
-        return render(request, 'subscribe.html', {'form': form})
+        return render(request, 'index.html', {'form': form})
