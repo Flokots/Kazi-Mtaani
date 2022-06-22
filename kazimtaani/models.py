@@ -87,3 +87,8 @@ class Job(models.Model):
     def search_by_category(cls,search_term):
         title = cls.objects.filter(category__name__icontains=search_term)
         return title
+
+
+class NewsLetterRecipients(models.Model):
+    name=models.CharField(max_length=30)
+    email=models.EmailField()
