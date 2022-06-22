@@ -13,6 +13,7 @@ def subscribe(request):
     if request.method == 'POST':
         form = NewsLetterForm(request.POST)
         if form.is_valid():
+            form.save()
             name=form.cleaned_data['name']
             email=form.cleaned_data['email']
 
